@@ -56,10 +56,14 @@
             margin-bottom: 20px;
         }
 
-        .projects, .about, .contact {
+        .about, .contact {
             display: flex;
             justify-content: center;
             gap: 30px;
+        }
+        .projects {
+            display: flexbox;
+            justify-content: baseline;
         }
 
         footer {

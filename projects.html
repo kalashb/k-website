@@ -3,8 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Kalash's Portfolio</title>
+    <meta name="description" content="Projects by Kalash">
+    <title>Projects - Kalash</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #ececec;
+            margin: 0;
+            padding: 0;
+            margin: 0 100px;
+        }
+
+        header {
+            font-family: 'Times New Roman', Times, serif;
+            padding: 50px 0 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        section {
+            padding: 50px 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        .projects {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+
+        .card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .card img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .card h3 {
+            font-size: 1.5em;
+            margin: 15px 0;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        footer {
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -22,27 +104,64 @@
         <a href="awards.html">Awards</a>
         <a href="participation.html">Participation</a>
     </nav>
-    <section>
-        <h2>My Projects</h2>
-        <p>Here are some of my amazing projects!</p>
+    <section id="experiences">
+        <h2>Experiences</h2>
         <div class="projects">
-            <div class="project">
-                <h3>Project 1</h3>
-                <p>Project description goes here. A brief summary of the project.</p>
-            </div>
-            <div class="project">
-                <h3>Project 2</h3>
-                <p>Project description goes here. A brief summary of the project.</p>
-            </div>
-            <div class="project">
-                <h3>Project 3</h3>
-                <p>Project description goes here. A brief summary of the project.</p>
-            </div>
+            <a href="projects/biocompute.html" class="card">
+                <h3>BioCompute Inc.</h3>
+                <p>Electrical Engineering Intern</p>
+            </a>
+            <a href="projects/fly.html" class="card">
+                <h3>Fun Learning Youth Foundation</h3>
+                <p>Founder and Director</p>
+            </a>
+            <a href="projects/atlas.html" class="card">
+                <h3>Atlas Fellowship</h3>
+                <p>India Marketing and Execution Lead</p>
+            </a>
+        </div>
+    </section>
+
+    <section id="projects">
+       
+        <h2>Projects</h2>
+        <div class="projects">
+            <a href="projects/nn.html" class="card">
+                <img src="fpga.jpg" alt="FPGA Neural Network">
+                <h3>FPGA Inference Model</h3>
+                <i>FPGA, Verilog, SystemVerilog</i>
+                <p>Built an MNIST image classification model on the FPGA, trained in Python.</p>
+            </a>
+            <a href="projects/fabric.html" class="card">
+                <img src="fabric.jpg" alt="FaBRIC">
+                <h3>FABRIC</h3>
+                <p>A collection of ML projects, including computer vision and NLP.</p>
+            </a>
+            <a href="projects/shikshak.html" class="card">
+                <img src="shikshak.jpg" alt="Shikshak">
+                <h3>Shikshak</h3>
+                <p>Autonomous vehicles, IoT, and microcontroller-based projects.</p>
+            </a>
+            <a href="projects/lumemory.html" class="card">
+                <img src="lumemory.jpg" alt="Lumemory">
+                <h3>Lumemory</h3>
+                <p>Autonomous vehicles, IoT, and microcontroller-based projects.</p>
+            </a>
+            <a href="projects/gramma.html" class="card">
+                <img src="gramma.jpg" alt="GrammaCooked">
+                <h3>Gramma Cooked</h3>
+                <p>Autonomous vehicles, IoT, and microcontroller-based projects.</p>
+            </a>
+            <a href="projects/UTRA1.html" class="card">
+                <img src="utra.jpg" alt="UTRAHacks2023">
+                <h3>UTRA Hacks</h3>
+                <p>Autonomous vehicles, IoT, and microcontroller-based projects.</p>
+            </a>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 Kalash</p>
+        <p>&copy; 2024 Kalash. All rights reserved.</p>
     </footer>
 </body>
 </html>
