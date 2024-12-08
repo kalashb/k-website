@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Courses by Kalash">
+    <title>Courses - Kalash</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #ececec;
+            margin: 0;
+            padding: 0;
+            margin: 0 100px;
+        }
+
+        header {
+            padding: 50px 0 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        section {
+            padding: 50px 20px;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+        }
+
+        .courses {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-around;
+        }
+
+        .course-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .course-card h3 {
+            font-size: 1.5em;
+            margin: 15px 0;
+        }
+
+        .course-card p {
+            color: #555;
+            font-size: 1em;
+            margin: 10px 0;
+        }
+
+        footer {
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kalash Bhaiya</h1>
+        <p>Computer Engineering | Education</p>
+        <p>kalashbhaiya [at] gmail [dot] com | <a href="https://www.linkedin.com/in/kalash-bhaiya/">LinkedIn</a>
+            | <a href="https://github.com/kalashb">GitHub</a>
+        </p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="projects.html">Projects</a>
+        <a href="awards.html">Awards</a>
+        <a href="participation.html">Participation</a>
+    </nav>
+    
+    <section id="courses">
+        <h2>Courses (and Notes)</h2>
+        <div class="courses">
+            <a href = "notes/291notes.html" class="course-card">
+                <h3>MAT291H1 - Calculus 3</h3>
+                <p>Learn the fundamentals of digital design, including logic gates, combinational/sequential circuits, and Verilog.</p>
+            </a>
+            <div class="course-card">
+                <h3>ECE244H1 - Programming Fundamentals</h3>
+                <p>Explore object-oriented programming in C++, including classes, pointers, and linked lists.</p>
+            </div>
+            <div class="course-card">
+                <h3>ECE320H1 - Computer Architecture</h3>
+                <p>Deep dive into processor design, memory hierarchies, and hardware acceleration techniques.</p>
+            </div>
+            <div class="course-card">
+                <h3>MAT290 - Advanced Engineering Mathematics</h3>
+                <p>Advanced topics in linear algebra, differential equations, and their applications in engineering.</p>
+            </div>
+            <div class="course-card">
+                <h3>ECE385 - Embedded Systems</h3>
+                <p>Hands-on experience with microcontrollers, peripherals, and real-time operating systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Kalash. All rights reserved.</p>
+    </footer>
+</body>
+</html>

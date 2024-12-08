@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Preview - Kalash</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #ececec;
+            margin: 0 100px;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 0 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav a {
+            color: rgb(0, 0, 0);
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #575757;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2em;
+            margin: 40px 0;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        a {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+
+        a:hover {
+            color: darkblue;
+        }
+
+        #preview {
+            margin-top: 30px;
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ccc;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: auto;
+        }
+
+        footer {
+            padding: 20px 0;
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-group a {
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 1em;
+            color: white;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-group a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Kalash Bhaiya</h1>
+        <p>Computer Engineering | Education</p>
+        <p>kalashbhaiya [at] gmail [dot] com | <a href="https://www.linkedin.com/in/kalash-bhaiya/">LinkedIn</a>
+            | <a href="https://github.com/kalashb">GitHub</a>
+        </p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="projects.html">Projects</a>
+        <a href="awards.html">Awards</a>
+        <a href="participation.html">Participation</a>
+    </nav>
+
+    <h1>MAT291 - Calculus 3 Notes</h1>
+
+    <!-- File Links -->
+    <ul>
+        <li>
+            <div class="btn-group">
+                <a href="#" onclick="previewFile('notes/MAT291notes.pdf')">View Course PDF</a>
+                <a href="pdf/MAT291notes.pdf" download>Download PDF</a>
+            </div>
+        </li>
+    </ul>
+
+    <!-- Preview Area -->
+    <div id="preview"></div>
+
+    <footer>
+        <p>&copy; 2024 Kalash. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to preview a file
+        function previewFile(filePath) {
+            const preview = document.getElementById("preview");
+
+            // Clear any existing content in the preview area
+            preview.innerHTML = "";
+
+            // Check if the file is a PDF
+            const fileType = filePath.split('.').pop().toLowerCase();
+            if (fileType === "pdf") {
+                // Create an iframe to display the PDF
+                const iframe = document.createElement("iframe");
+                iframe.src = filePath;
+                iframe.style.width = "100%";
+                iframe.style.height = "100%";
+                preview.appendChild(iframe);
+            } else {
+                preview.innerHTML = "Unsupported file type.";
+            }
+        }
+    </script>
+</body>
+</html>
