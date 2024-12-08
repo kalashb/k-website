@@ -79,6 +79,33 @@
             width: 250px;
             text-align: center;
         }
+ /* Hamburger menu (hidden by default on large screens) */
+ .hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Allow wrapping of items */
+    gap: 20px; /* Space between items */
+}
+
+.nav-links a {
+    padding: 10px 20px;
+    text-align: center;
+    font-weight: bold;
+    width: auto; /* Allow width to adjust based on content */
+}
+
+nav a:hover {
+    background-color: #575757;
+    color: white;
+}
+
 /* Mobile responsiveness */
 @media screen and (max-width: 768px) {
     body {
@@ -110,17 +137,10 @@
         font-size: 1.5em;
     }
 
-    /* Stack nav items vertically on mobile */
-    nav {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 10px 0;
-    }
-
-    nav a {
-        padding: 10px;
-        width: 100%;
-        text-align: left;  /* Align text to the left for a cleaner look */
+    /* Make sure nav items wrap on smaller screens */
+    .nav-links {
+        flex-wrap: wrap; /* Allow wrapping of nav items */
+        justify-content: center;
     }
 
     /* Display hamburger menu for smaller screens */
@@ -137,7 +157,8 @@
     /* When active, show the nav links */
     .nav-links.active {
         display: flex;
-        flex-direction: column;
+        flex-direction: row; /* Keep items in a row */
+        justify-content: center; /* Center the items */
     }
 }
 
