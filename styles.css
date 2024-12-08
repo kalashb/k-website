@@ -79,58 +79,87 @@
             width: 250px;
             text-align: center;
         }
-
-        /* Mobile responsiveness */
-    @media screen and (max-width: 768px) {
-        body {
-            margin: 0 20px;
-        }
-
-        header h1 {
-            font-size: 1.8em;
-        }
-
-        .projects {
-            justify-content: center;
-        }
-
-        .card {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .projects .card img {
-            width: 100%;
-        }
-
-        nav a {
-            padding: 10px 15px;
-        }
-
-        section h2 {
-            font-size: 1.5em;
-        }
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    body {
+        margin: 0 20px;
     }
 
-    /* Extra small devices (phone) */
-    @media screen and (max-width: 480px) {
-        header h1 {
-            font-size: 1.5em;
-        }
-
-        .card h3 {
-            font-size: 1.2em;
-        }
-
-        .card p {
-            font-size: 0.9em;
-        }
-
-        section h2 {
-            font-size: 1.3em;
-        }
-
-        nav a {
-            padding: 8px 10px;
-        }
+    header h1 {
+        font-size: 1.8em;
     }
+
+    .projects {
+        justify-content: center;
+    }
+
+    .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .projects .card img {
+        width: 100%;
+    }
+
+    nav a {
+        padding: 10px 15px;
+    }
+
+    section h2 {
+        font-size: 1.5em;
+    }
+
+    /* Stack nav items vertically on mobile */
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 0;
+    }
+
+    nav a {
+        padding: 10px;
+        width: 100%;
+        text-align: left;  /* Align text to the left for a cleaner look */
+    }
+
+    /* Display hamburger menu for smaller screens */
+    .hamburger {
+        display: block;
+    }
+
+    /* Hide the nav links on mobile initially */
+    .nav-links {
+        display: none;
+        width: 100%;
+    }
+
+    /* When active, show the nav links */
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Extra small devices (phone) */
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .card h3 {
+        font-size: 1.2em;
+    }
+
+    .card p {
+        font-size: 0.9em;
+    }
+
+    section h2 {
+        font-size: 1.3em;
+    }
+
+    nav a {
+        padding: 8px 10px;
+    }
+}
