@@ -84,6 +84,54 @@
             text-align: center;
             margin-top: 50px;
         }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 95%;
+                padding: 10px;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                margin: 10px 0;
+                padding: 10px;
+                width: 200px;
+                text-align: center;
+                border-radius: 5px;
+            }
+
+            .participations {
+                font-size: 14px;
+            }
+
+            .participations th, 
+            .participations td {
+                padding: 8px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .participations {
+                font-size: 12px;
+            }
+
+            .participations th, 
+            .participations td {
+                padding: 6px;
+            }
+
+            header h1 {
+                font-size: 1.5em;
+            }
+
+            header p {
+                font-size: 0.9em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -147,7 +195,7 @@
                 </tr>
                 <tr>
                     <td><a href="https://www.warp.camp/" target="_blank">Winter Applied Rationality Program (WARP 2022)</a></td>
-                    <td>Selected for a 10-day immersive workshop. Only Asian attendee, Queen’s College, Oxford.</td>
+                    <td>Selected for a 10-day immersive workshop. Only Asian attendee, Queen's College, Oxford.</td>
                 </tr>
                 <tr>
                     <td>International Math Olympiad Training Camp</td>
