@@ -23,15 +23,6 @@ header h2 {
     margin: 0;
 }
 
-a {
-    text-decoration: none;
-    color: #007bff;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
 nav {
     display: flex;
     justify-content: center;
@@ -54,6 +45,27 @@ a:hover {
     text-decoration: underline;
 }
 
+/* General nav link styling */
+nav a {
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #e0e0e0; /* Default light background */
+    color: black; /* Text color */
+}
+
+/* Hover effect */
+nav a:hover {
+    background-color: #575757;
+    color: white;
+}
+
+/* Flexbox styling for navigation links */
+nav {
+    display: flex;
+    gap: 8px;
+}
+/*
 nav a:hover {
     background-color: #575757;
     color: white;
@@ -63,7 +75,7 @@ nav a:hover {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap; /* Allow wrapping of items */
+    flex-wrap: wrap; /* Allow wrapping of items *//*
     gap: 20px;
 }
 
@@ -71,9 +83,9 @@ nav a:hover {
     padding: 10px 20px;
     text-align: center;
     font-weight: bold;
-    width: auto; /* Allow width to adjust based on content */
+    width: auto; /* Allow width to adjust based on content *//*
 }
-
+*/
 section {
     padding: 50px 20px;
 }
