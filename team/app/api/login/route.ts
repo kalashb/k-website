@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import { cookies } from 'next/headers'
 import { getUser } from '@/lib/store'
 import { signToken } from '@/lib/jwt'
 
@@ -6,7 +7,7 @@ export async function POST(request: Request) {
   try {
     const { username, password } = await request.json()
     
-    if (!username || !password) {
+    if (!username || password) {
       return NextResponse.json({ success: false, message: 'Username and password are required' }, { status: 400 })
     }
 
@@ -15,12 +16,15 @@ export async function POST(request: Request) {
     if (user) {
       const token = signToken({ userId: user.id, username: user.username })
       const response = NextResponse.json({ success: true, token })
-      response.cookies.set('token', token, { 
+      
+      // Use the cookies() function to set the cookie
+      cookies().set('token', token, { 
         httpOnly: true, 
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'strict',
         maxAge: 86400 // 1 day
       })
+      
       return response
     } else {
       return NextResponse.json({ success: false, message: 'Invalid username or password' }, { status: 401 })

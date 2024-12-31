@@ -1,8 +1,10 @@
 import { NextResponse } from 'next/server'
 import { verifyToken } from './lib/jwt'
+import { cookies } from 'next/headers'
 
 export function middleware(request: Request) {
-  const token = request.cookies.get('token')?.value
+  const cookieStore = cookies()
+  const token = cookieStore.get('token')?.value
 
   if (!token) {
     return NextResponse.redirect(new URL('/login', request.url))
