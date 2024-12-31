@@ -12,15 +12,13 @@ document.addEventListener("DOMContentLoaded", function() {
     // Function to disable the button and remove animation
     function disableButton() {
         counterButton.disabled = true; // Disable the button
-        counterButton.style.animation = "none"; // Remove button animation
-        counterButton.style.cursor = "not-allowed"; // Change the cursor to indicate it's disabled
+        counterButton.classList.add("no-bounce"); // Disable the animation
     }
 
     // Function to enable the button and restore animation
     function enableButton() {
         counterButton.disabled = false; // Enable the button
-        counterButton.style.animation = "buttonClick 0.5s ease infinite"; // Restore button animation
-        counterButton.style.cursor = "pointer"; // Reset cursor to normal
+        counterButton.classList.remove("no-bounce"); // Restore the animation
     }
 
     // Reset the game
@@ -37,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Reset the counter display
         counterDisplay.textContent = `You clicked ${count} times`;
 
-        // Remove all balls
+        // Remove all balls without triggering animation
         const balls = document.querySelectorAll(".ball");
         balls.forEach(ball => ball.remove());
 
@@ -47,6 +45,10 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Main counter button logic
     counterButton.addEventListener("click", function() {
+        // Trigger the button click animation once
+        counterButton.classList.add("clicked");
+        setTimeout(() => counterButton.classList.remove("clicked"), 500); // Remove the class after animation
+
         count++;
         counterDisplay.textContent = `You clicked ${count} times`;
 

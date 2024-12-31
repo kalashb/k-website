@@ -137,7 +137,7 @@ body {
 #counter-button {
     font-size: 18px;
     padding: 12px 24px;
-    background-color: #140087;
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
@@ -153,7 +153,7 @@ body {
 
 /* Hover and Active States */
 #counter-button:hover {
-    background-color: #001730;
+    background-color: #0056b3;
     transform: scale(1.1);
 }
 
