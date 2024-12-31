@@ -1,6 +1,6 @@
 import { cookies } from 'next/headers'
 import { verifyToken } from '@/lib/jwt'
-import { getTeamsByMember, getCourses } from '@/lib/store'
+import { store } from '@/lib/store'
 import TeamList from './team-list'
 import CreateTeamForm from './create-team-form'
 import LogoutButton from './logout-button'
@@ -19,8 +19,8 @@ export default async function DashboardPage() {
     return <div>Invalid token. Please log in again.</div>
   }
 
-  const teams = await getTeamsByMember(decodedToken.userId)
-  const courses = await getCourses()
+  const teams = await store.getTeamsByMember(decodedToken.userId)
+  const courses = await store.getCourses()
 
   return (
     <div className="container mx-auto p-4">

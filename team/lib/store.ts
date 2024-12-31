@@ -1,6 +1,18 @@
 import db from './db'
 import bcrypt from 'bcrypt'
 
+export const store = {
+  addUser,
+  getUser,
+  createTeam,
+  getTeams,
+  getTeamsByMember,
+  joinTeamRequest,
+  approveJoinRequest,
+  denyJoinRequest,
+  getCourses,
+};
+
 export async function addUser(username: string, password: string) {
   try {
     const hashedPassword = await bcrypt.hash(password, 10)

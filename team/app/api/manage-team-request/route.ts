@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { verifyToken } from '@/lib/jwt'
-import { approveJoinRequest, denyJoinRequest } from '@/lib/store'
+import { store } from '@/lib/store'
 
 export async function POST(request: Request) {
   const token = request.headers.get('Authorization')?.split(' ')[1]
@@ -13,9 +13,9 @@ export async function POST(request: Request) {
   const { teamId, userId, action } = await request.json()
   
   if (action === 'approve') {
-    await approveJoinRequest(teamId, userId)
+    await store.approveJoinRequest(teamId, userId)
   } else if (action === 'deny') {
-    await denyJoinRequest(teamId, userId)
+    await store.denyJoinRequest(teamId, userId)
   }
 
   return NextResponse.json({ success: true })

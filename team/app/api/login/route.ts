@@ -1,23 +1,23 @@
 import { NextResponse } from 'next/server'
 import { cookies } from 'next/headers'
-import { getUser } from '@/lib/store'
+import { store } from '@/lib/store'
 import { signToken } from '@/lib/jwt'
 
 export async function POST(request: Request) {
   try {
-    const { username, password } = await request.json()
+    const body = await request.json()
+    const { username, password } = body
     
-    if (!username || password) {
+    if (!username || !password) {
       return NextResponse.json({ success: false, message: 'Username and password are required' }, { status: 400 })
     }
 
-    const user = await getUser(username, password)
+    const user = await store.getUser(username, password)
 
     if (user) {
       const token = signToken({ userId: user.id, username: user.username })
       const response = NextResponse.json({ success: true, token })
       
-      // Use the cookies() function to set the cookie
       cookies().set('token', token, { 
         httpOnly: true, 
         secure: process.env.NODE_ENV === 'production',

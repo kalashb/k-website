@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server'
 import { verifyToken } from '@/lib/jwt'
-import { createTeam } from '@/lib/store'
+import { store } from '@/lib/store'
 
 export async function POST(request: Request) {
   const token = request.headers.get('Authorization')?.split(' ')[1]
@@ -11,7 +11,7 @@ export async function POST(request: Request) {
   }
 
   const { name, course } = await request.json()
-  const team = await createTeam(name, course, decodedToken.userId)
+  const team = await store.createTeam(name, course, decodedToken.userId)
   return NextResponse.json({ success: true, team })
 }
 
