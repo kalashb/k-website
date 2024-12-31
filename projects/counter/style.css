@@ -1,0 +1,183 @@
+/* General Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    animation: fadeIn 1s ease-in;
+}
+
+/* Container Styling */
+.container {
+    text-align: center;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    box-sizing: border-box;
+    transform: scale(0);
+    animation: slideIn 0.5s ease-out forwards;
+    position: relative;
+}
+
+/* Counter Display Styling */
+#counter-display {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeInText 1s ease-in forwards;
+}
+
+/* Ball Styling */
+.ball {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background-color: #ff5733;
+    border-radius: 50%;
+    animation: ballAnimation 2s ease-out forwards; /* 'forwards' keeps the ball visible */
+}
+
+@keyframes ballAnimation {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes buttonClick {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInPin {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Styling for Smaller Screens */
+@media (max-width: 600px) {
+    .container {
+        width: 85%;
+        padding: 25px;
+    }
+
+    #counter-display {
+        font-size: 22px;
+    }
+
+    #counter-button {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}
+
+#timer-display {
+    font-size: 22px;
+    color: #333;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* Button Styling */
+#counter-button {
+    font-size: 18px;
+    padding: 12px 24px;
+    background-color: #140087;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Button Animation when clicked */
+#counter-button.clicked {
+    animation: buttonClick 0.5s ease;
+}
+
+/* Hover and Active States */
+#counter-button:hover {
+    background-color: #001730;
+    transform: scale(1.1);
+}
+
+#counter-button:active {
+    transform: scale(0.95);
+}
+
+/* Reset Button Styling */
+#reset-button {
+    font-size: 18px;
+    padding: 12px 24px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+#reset-button:hover {
+    background-color: #218838;
+}
+
+#reset-button:active {
+    transform: scale(0.95);
+}
