@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <div class="container">
+        <header class="page-header">
+            <h1>Second Sem BS</h1>
+            <p>Please create "member card" before creating or joining a team (or it will show err)</p>
+            <div class="actions-container">
+                <button class="btn primary" onclick="document.getElementById('create-team-modal').style.display='block'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 5v14m-7-7h14"/>
+                    </svg>
+                    Create Team
+                </button>
+                
+                <button class="btn secondary" onclick="document.getElementById('member-card-modal').style.display='block'">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                        <circle cx="12" cy="7" r="4"/>
+                    </svg>
+                    Create Member Card
+                </button>
+            </div>
+
+            <div class="filter-container">
+                <label for="filter-courses" class="filter-label">Filter by Course:</label>
+                <select id="filter-courses" class="form-select">
+                    <option value="">All Courses</option>
+                    <option value="ECE297">ECE297</option>
+                    <option value="ECE295">ECE295</option>
+                    <option value="ECE216">ECE216</option>
+                    <option value="ECE212">ECE212</option>
+                    <option value="ECE221">ECE221</option>
+                </select>
+            </div>
+        </header>
+
+        <main id="teams-container" class="teams-grid">
+            <!-- Teams will be dynamically rendered here -->
+        </main>
+    </div>
+
+    <!-- Create Team Modal -->
+    <div id="create-team-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create New Team</h2>
+                <button class="close-btn" onclick="teamManager.handleModalClose('create-team-modal')">&times;</button>
+            </div>
+            
+            <form id="create-team-form" class="form">
+                <div class="form-group">
+                    <label for="create-course" class="form-label">Course</label>
+                    <select id="create-course" name="course" class="form-select" required>
+                        <option value="">Select Course</option>
+                        <option value="ECE297">ECE297</option>
+                        <option value="ECE295">ECE295</option>
+                        <option value="ECE216">ECE216</option>
+                        <option value="ECE212">ECE212</option>
+                        <option value="ECE221">ECE221</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="create-section" class="form-label">Section</label>
+                    <input type="text" id="create-section" name="section" class="form-input" 
+                           placeholder="Enter section number" required>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn primary">Create Team</button>
+                    <button type="button" class="btn secondary" 
+                            onclick="teamManager.handleModalClose('create-team-modal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Member Card Modal -->
+    <div id="member-card-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create Member Card</h2>
+                <button class="close-btn" onclick="teamManager.handleModalClose('member-card-modal')">&times;</button>
+            </div>
+            
+            <form id="member-card-form" class="form">
+                <div class="form-group">
+                    <label for="member-name" class="form-label">Name</label>
+                    <input type="text" id="member-name" name="name" class="form-input" 
+                           placeholder="Username" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="member-contact" class="form-label">Email (you will be contacted when someone requests/accepts)</label>
+                    <input type="email" id="member-contact" name="contact" class="form-input" 
+                           placeholder="Enter a valid email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="member-description" class="form-label">Description (about yourself)</label>
+                    <textarea id="member-description" name="description" class="form-input" 
+                            placeholder="Brief description about yourself" rows="3" required></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn primary">Create Card</button>
+                    <button type="button" class="btn secondary" 
+                            onclick="teamManager.handleModalClose('member-card-modal')">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Template for team cards (for reference) -->
+    <template id="team-card-template">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="course-title"></h3>
+                <span class="member-count"></span>
+            </div>
+            
+            <div class="card-body">
+                <div class="creator-info">
+                    <h4>Team Creator</h4>
+                    <div class="creator-details"></div>
+                </div>
+                
+                <div class="members-section">
+                    <h4>Team Members</h4>
+                    <div class="members-list"></div>
+                </div>
+                
+                <div class="requests-section">
+                    <h4>Join Requests</h4>
+                    <div class="requests-list"></div>
+                </div>
+                
+                <div class="card-actions"></div>
+            </div>
+        </div>
+    </template>
+
+    <script src="script.js"></script>
+</body>
+</html>
