@@ -362,5 +362,5 @@ const MAX_MEMBERS = {
   }
   
   // Initialize the application
-  const teamManager = new TeamManager();
-  document.addEventListener('DOMContentLoaded', teamManager.init);
+   const teamManager = new TeamManager();
+ document.addEventListener('DOMContentLoaded', teamManager.init);
