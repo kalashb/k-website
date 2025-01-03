@@ -7,20 +7,19 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
     <div class="container">
         <header class="page-header">
             <h1>Second Sem BS</h1>
             <p>Please create "member card" before creating or joining a team (or it will show err)</p>
             <div class="actions-container">
-                <button class="btn primary" onclick="document.getElementById('create-team-modal').style.display='block'">
+                <button class="btn primary" id="createTeamBtn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M12 5v14m-7-7h14"/>
                     </svg>
                     Create Team
                 </button>
                 
-                <button class="btn secondary" onclick="document.getElementById('member-card-modal').style.display='block'">
+                <button class="btn secondary" id="createMemberBtn">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
                         <circle cx="12" cy="7" r="4"/>
@@ -109,6 +108,7 @@
                     <textarea id="member-description" name="description" class="form-input" 
                             placeholder="Brief description about yourself" rows="3" required></textarea>
                 </div>
+                <button onclick="teamManager()">Click Me</button>
 
                 <div class="form-actions">
                     <button type="submit" class="btn primary">Create Card</button>
@@ -147,7 +147,51 @@
             </div>
         </div>
     </template>
-
-    <script src="script.js"></script>
+    <script type="module">
+        async function initApp() {
+            try {
+                const firebaseOps = (await import('./firebase.js')).firebaseOps;
+                const TeamManager = (await import('./script.js')).default;
+                
+                const teamManager = new TeamManager();
+                window.teamManager = teamManager; // Make it globally available
+                await teamManager.init();
+    
+                // Add event listeners
+                document.getElementById('create-team-button').addEventListener('click', () => {
+                    document.getElementById('create-team-modal').style.display = 'block';
+                });
+    
+                document.getElementById('create-member-button').addEventListener('click', () => {
+                    document.getElementById('member-card-modal').style.display = 'block';
+                });
+    
+                // Add modal close handlers
+                document.querySelectorAll('.modal').forEach(modal => {
+                    modal.addEventListener('click', (e) => {
+                        if (e.target === modal) {
+                            modal.style.display = 'none';
+                        }
+                    });
+                });
+    
+                document.querySelectorAll('.close-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const modal = btn.closest('.modal');
+                        if (modal) {
+                            modal.style.display = 'none';
+                        }
+                    });
+                });
+    
+            } catch (error) {
+                console.error('Error initializing app:', error);
+            }
+        }
+    
+        // Initialize when DOM is loaded
+        window.addEventListener('DOMContentLoaded', initApp);
+    </script>
+    
 </body>
 </html>
