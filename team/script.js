@@ -191,7 +191,7 @@ class TeamManager {
             this.showNotification('Please fill all required fields', 'error');
             return false;
         }
-
+/*
         if (!Object.keys(MAX_MEMBERS).includes(teamData.course) &&
             !MAX_MEMBERS.default) {
             this.showNotification('Invalid course selected', 'error');
@@ -202,7 +202,7 @@ class TeamManager {
             this.showNotification('Invalid section number', 'error');
             return false;
         }
-
+*/
         return true;
     }
 
