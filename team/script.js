@@ -538,3 +538,5 @@ function initializeTeamManager() {
     window.teamManager = teamManager;
     teamManager.init();
 }
+
+export default teamManager;
