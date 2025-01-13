@@ -96,8 +96,18 @@ section h2 {
     margin-bottom: 30px;
 }
 
+.about {
+    padding: 0 50px; 
+    text-align: left; 
+    font-size: 1.2em; 
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
 /* Specific Styles */
-.about, .contact {
+.contact {
     display: flex;
     justify-content: center;
     gap: 30px;
