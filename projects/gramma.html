@@ -1,1 +1,61 @@
-gramma
+<!DOCTYPE html>
+<script src="https://unpkg.com/htmx.org@2.0.3/dist/htmx.js" integrity="sha384-BBDmZzVt6vjz5YbQqZPtFZW82o8QotoM7RUp5xOxV3nSJ8u2pSdtzFAbGKzTlKtg" crossorigin="anonymous"></script>
+<script> import { SpeedInsights } from "@vercel/speed-insights/next" </script>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kalash Bhaiya">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+    <header>
+        <h1>Kalash Bhaiya</h1>
+        <p>Computer Engineering | Education</p>
+        <p>kalashbhaiya [at] gmail [dot] com | <a href="https://www.linkedin.com/in/kalash-bhaiya/">LinkedIn</a>
+            | <a href="https://github.com/kalashb">GitHub</a>
+        </p>
+    </header>
+
+    <nav id="main-nav">
+        <!-- Toggle Button for Mobile -->
+        <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
+
+        <!-- Navigation Links -->
+        <ul id="menu" class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../courses.html">Courses</a></li>
+            <li><a href="../projects.html">Projects</a></li>
+            <li><a href="../awards.html">Awards</a></li>
+            <li><a href="../participation.html">Participation</a></li>
+        </ul>
+    </nav>
+    <p style="padding: 0 50px; text-align: left; font-size: 1.6em; 
+    line-height: 1.6;"> <a href="https://devpost.com/software/gramma-cooked">UofTHacks 2023</a>, theme <b>Nostalgia</b> in collaboration with <a href="https://www.linkedin.com/in/harpuneet2005/">Harpuneet Singh</a>, <a href="https://www.linkedin.com/in/arahank/">Arahan Kadakia</a>, and <a href="https://www.linkedin.com/in/cedric-wang/">Cedric Wang</a>.  </p>
+    <div style="padding: 0 50px; font-size: 1.2em; line-height: 1.6;">
+    <h2>Gramma Cooked: AI-Powered Nostalgic Recipe Generator</h2>
+    <p>
+        Gramma Cooked is an AI-driven chatbot designed to transform a list of ingredients or an uploaded photo 
+        into a personalized culinary experience. By leveraging advanced image recognition and natural language 
+        processing, the chatbot identifies available ingredients, asks for your preferred cuisine or cultural 
+        flavors, and generates traditional recipes rooted in nostalgia. Users can customize their requests with 
+        tags or comments to refine their results, making it a versatile tool for rediscovering the joy of home-cooked meals.
+    </p>
+    <p>
+        This project was built using a tech stack that included Flask for the backend, React and TypeScript 
+        for the frontend, and Cohere's NLP tools for language processing. Our team also integrated APIs to handle 
+        real-time image-to-ingredient recognition and connected a curated recipe database to deliver accurate and 
+        culturally rich results. 
+    </p>
+    <p>
+        The development process involved overcoming challenges like fine-tuning image recognition models, building 
+        a responsive user interface, and ensuring the recipe suggestions were authentic and diverse. Through this 
+        project, I strengthened my skills in full-stack development, machine learning integration, and cross-functional 
+        collaboration in a high-pressure hackathon environment.
+    </p>
+    <p><b>Stack used:</b> <span style="color:rgb(0, 142, 121)">Flask, Cohere, React, JavaScript, TypeScript</span></p>
+</div>
+
+</body>
+</html>

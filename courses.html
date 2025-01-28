@@ -6,125 +6,7 @@
     <meta name="description" content="Courses by Kalash">
     <title>Courses - Kalash</title>
     <link rel="stylesheet" href="styles.css">
-    <!--<style>
-       
-
-        nav {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 20px;
-        }
-
-        section {
-            padding: 50px 20px;
-        }
-
-        section h2 {
-            text-align: center;
-            font-size: 2em;
-            margin-bottom: 30px;
-        }
-
-        
-
-        footer {
-            padding: 20px 0;
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        @media screen and (max-width: 768px) {
-   body {
-       margin: 0 10px; /* Reduce side margins further */
-   }
-
-   header h1 {
-       font-size: 1.5em; /* Slightly smaller header */
-   }
-
-   .projects {
-       display: flex; /* Change to flex for better control */
-       flex-direction: column; /* Stack cards vertically */
-       align-items: center; /* Center cards */
-   }
-
-   .course-card {
-       width: 90%; /* Slightly less than full width */
-       max-width: 300px; /* Prevent cards from getting too wide */
-       margin-bottom: 15px;
-       padding: 15px; /* Slightly less padding */
-   }
-
-   .course-card img {
-       max-width: 100%; /* Ensure images scale properly */
-       height: auto; /* Maintain aspect ratio */
-   }
-
-   nav {
-       flex-direction: column; /* Stack nav items vertically */
-       align-items: center;
-   }
-
-   .nav-links {
-       flex-direction: column; /* Stack nav links vertically */
-       width: 100%;
-       gap: 10px; /* Reduce gap between nav items */
-   }
-
-   nav a {
-       padding: 8px 12px; /* Smaller touch targets */
-       width: 100%; /* Full width for easier tapping */
-       text-align: center;
-   }
-
-   section {
-       padding: 20px 10px; /* Reduce section padding */
-   }
-
-   section h2 {
-       font-size: 1.4em; /* Slightly smaller section headers */
-   }
-
-   .about, .contact {
-       flex-direction: column; /* Stack flex items vertically */
-       align-items: center;
-       gap: 15px; /* Reduce gap between items */
-   }
-}
-
-/* Extra small devices (smaller phones) */
-@media screen and (max-width: 480px) {
-   body {
-       margin: 0 5px; /* Even smaller side margins */
-   }
-
-   header h1 {
-       font-size: 1.3em;
-   }
-
-   .card {
-       width: 95%; /* Almost full width */
-       max-width: 250px; /* Prevent cards from getting too wide */
-       padding: 10px; /* Further reduce padding */
-   }
-
-   .card h3 {
-       font-size: 1.1em;
-   }
-
-   .card p {
-       font-size: 0.85em;
-   }
-
-   section h2 {
-       font-size: 1.2em;
-   }
-
-   nav a {
-       padding: 6px 8px; /* Smaller touch targets */
-   }
-}
-    </style>-->
+    
 </head>
 <body>
     <header>
@@ -135,12 +17,18 @@
         </p>
     </header>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="courses.html">Courses</a>
-        <a href="projects.html">Projects</a>
-        <a href="awards.html">Awards</a>
-        <a href="participation.html">Participation</a>
+    <nav id="main-nav">
+        <!-- Toggle Button for Mobile -->
+        <button id="menu-toggle" aria-label="Toggle navigation">☰</button>
+
+        <!-- Navigation Links -->
+        <ul id="menu" class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="awards.html">Awards</a></li>
+            <li><a href="participation.html">Participation</a></li>
+        </ul>
     </nav>
     <section id = "about">
     <p  style="padding: 0px 50px; text-align: center; font-size: 1.2em; line-height: 1.6;">Most courses are completely under UofT's ECE, MAT, APS Departments, and some courses were taken online. My notes might have screenshots of or reference to snippets of material from professor's notes.</p>
