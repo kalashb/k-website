@@ -1,14 +1,14 @@
 /* General Styles */
 :root {
-  --primary-color: #0077B6;
-  --secondary-color: #10b981;
-  --background-color: #f3f4f6;
+  --primary-color: #4c788c;
+  --secondary-color: #ffe5d9;
+  --background-color: #fffdfc;
   --text-primary: #1f2937;
   --text-secondary: #4b5560;
-  --card-bg: #CAF0F8;
-  --header-bg: #90E0EF;
-  --nav-bg: #48CAE4;
-  --nav-hover: #0077B6;
+  --card-bg: #fff2eb; /**/
+  --header-bg: #ffe5d9; /**/
+  --nav-bg: #D9F3FF; /**/
+  --nav-hover: #4c788c; /**/
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
   --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
@@ -49,7 +49,7 @@
   p { margin: 0 0 1rem; }
 
   a {
-    color: #03045E; /* Use your custom color */
+    color: #b9420c; /* Use your custom color */  /**/
     text-decoration: none; /* Removes underline globally */
   }
   a:hover {
@@ -109,8 +109,8 @@
   
   nav a:hover,
   nav a:focus {
-    background-color: #023E8A;
-    color: #CAF0F8;
+    background-color: #324762;  /**/
+    color: #CAF0F8;  /**/
   }
   
   /* Section Styles */
@@ -150,7 +150,7 @@
   }
 
   .card p{
-    color: black;
+    color: black;  /**/
   }
   
   .card:hover,
@@ -172,7 +172,7 @@
   .course-card h3 {
     font-size: 1.25rem;
     margin-bottom: 0.5rem;
-    color: black;
+    color: black;  /**/
   }
   
   .card p,
@@ -184,7 +184,7 @@
   table {
     width: 100%;
     border-collapse: collapse;
-    background-color: var(--card-bg);
+    background-color: var(--background-color);
     box-shadow: var(--shadow-md);
     border-radius: 0.5rem;
     overflow: hidden;
